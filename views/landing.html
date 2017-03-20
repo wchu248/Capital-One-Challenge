@@ -1,12 +1,32 @@
 <script>
     function process() {
-        console.log(x)
         fetch("/api/search?" + "latitude=" + x.latitude + "&longitude=" + x.longitude + "&term=" + query.value)
             .then(res => res.json())
             .then(data => data.businesses)
             .then(businesses => businesses.map(business => business.name))
             .then(data => {
-                responseArea.innerHTML = JSON.stringify(data)
+                responseArea.innerHTML = "Here are some restaurant recommendations for you! \n" + JSON.stringify(data)
+            })
+    }
+
+    function questionnaire() {
+        const r = (parseInt(radius.value) * 1609.344).toString()
+        const price = []
+        if (document.getElementById("price1").checked) price.push(price1.value.toString());
+        if (document.getElementById("price2").checked) price.push(price2.value.toString());
+        if (document.getElementById("price3").checked) price.push(price3.value.toString());
+        if (document.getElementById("price4").checked) price.push(price4.value.toString());
+        const open_status = true
+        if (open.value == "no") {
+            open_status = false;
+        }
+        fetch("/api/search?" + "latitude=" + x.latitude + "&longitude=" + x.longitude + "&term=" + food_question.value +
+                               "&radius=" + r + "&price=" + price.join() + "&open_now=" + open_status)
+            .then(res => res.json())
+            .then(data => data.businesses)
+            .then(businesses => businesses.map(business => business.name))
+            .then(data => {
+                responseArea.innerHTML = "Here are some restaurant recommendations for you! \n" + JSON.stringify(data)
             })
     }
 
@@ -14,7 +34,6 @@
     function showPosition(position) {
         x.latitude = position.coords.latitude
         x.longitude = position.coords.longitude
-        thebutton.disabled = false
     }
     function getLocation() {
         if (navigator.geolocation) {
@@ -32,10 +51,39 @@
 <p>Look at all this cool info:</p>
 
 <input id = "query" placeholder="Search..."></input>
-<button id = "thebutton" onclick = "process()" disabled = "true">Click here to get information</button>
+<button onclick = "process()">Click here to get information</button>
 
-<code>
+
+<p>Fill out this questionnaire to get a recommendation!!!!!!!</p>
+
+
+<p>What type of food do you like?</p>
+<input id="food_question" placeholder="Chinese, Mexican, etc..."></input>
+
+<p>How far are you willing to travel for food (in miles, up to 25)?</p>
+<input type="number" id="radius"></input>
+
+<p>How much do you want to pay for food (check all that apply)?</p>
+<input type="checkbox" id="price1" value="1">$<br>
+<input type="checkbox" id="price2" value="2">$$<br> 
+<input type="checkbox" id="price3" value="3">$$$<br>
+<input type="checkbox" id="price4" value="4">$$$$
+
+<p>Does your restaurant have to be open now?</p>
+<input type="radio" name="open_now" id="open" value="yes">Yes<br>
+<input type="radio" name="open_now" id="open" value="no">No<br>
+
+<button onclick="questionnaire()">Submit</button><br>
+
 <div id = "responseArea">
-    
 </div>
-</code>
+
+
+
+
+
+
+
+
+
+
