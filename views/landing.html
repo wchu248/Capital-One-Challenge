@@ -1,7 +1,10 @@
 <script>
     function process() {
-        fetch("/api/search")
+        console.log(query.value)
+        fetch("/api/search?q=" + query.value)
             .then(res => res.json())
+            .then(data => data.businesses)
+            .then(businesses => businesses.map(business => business.name))
             .then(data => {
                 responseArea.innerHTML = JSON.stringify(data)
             })
@@ -11,6 +14,7 @@
 
 <p>Look at all this cool info:</p>
 
+<input id = "query" placeholder="Search..."></input>
 <button onclick = "process()">Click here to get information</button>
 
 <code>
