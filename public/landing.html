@@ -1,0 +1,39 @@
+<script type="text/javascript" src="js/scripts.js"></script>
+
+<p>Look at all this cool info:</p>
+
+<input id = "query" placeholder="Search..."></input>
+<button id="thebutton1" onclick = "process()" disabled=true>Click here to get information</button>
+
+<p>Fill out this questionnaire to get a recommendation!!!!!!!</p>
+
+<p>What type of food do you like?</p>
+<input id="food_question" placeholder="Chinese, Mexican, etc..."></input>
+
+<p>How far are you willing to travel for food (in miles, up to 25)?</p>
+<input type="number" id="radius"></input>
+
+<p>How much do you want to pay for food (check all that apply)?</p>
+<input type="checkbox" id="price1" value="1">$<br>
+<input type="checkbox" id="price2" value="2">$$<br> 
+<input type="checkbox" id="price3" value="3">$$$<br>
+<input type="checkbox" id="price4" value="4">$$$$
+
+<p>Does your restaurant have to be open now?</p>
+<input type="radio" name="open_now" id="open1" value="yes">Yes<br>
+<input type="radio" name="open_now" id="open2" value="no">No<br>
+
+<button id="thebutton2" onclick="questionnaire()" disabled=true>Submit</button><br>
+
+<ul id = "responseArea">
+</ul>
+
+
+
+
+
+
+
+
+
+
