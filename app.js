@@ -1,8 +1,9 @@
 var express = require("express")
 var app = express()
 
-const tokenizer = require("./app/index.js")
+app.use(require("morgan")("dev"))
 
+const tokenizer = require("./app/index.js")
 tokenizer.init(app)
 app.get("/api/search", tokenizer.search)
 
