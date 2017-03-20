@@ -1,7 +1,7 @@
 <script>
     function process() {
-        console.log(query.value)
-        fetch("/api/search?q=" + query.value)
+        console.log(x)
+        fetch("/api/search?" + "latitude=" + x.latitude + "&longitude=" + x.longitude + "&term=" + query.value)
             .then(res => res.json())
             .then(data => data.businesses)
             .then(businesses => businesses.map(business => business.name))
@@ -9,13 +9,30 @@
                 responseArea.innerHTML = JSON.stringify(data)
             })
     }
+
+    var x = {}
+    function showPosition(position) {
+        x.latitude = position.coords.latitude
+        x.longitude = position.coords.longitude
+        thebutton.disabled = false
+    }
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    getLocation()
+
 </script>
 
 
 <p>Look at all this cool info:</p>
 
 <input id = "query" placeholder="Search..."></input>
-<button onclick = "process()">Click here to get information</button>
+<button id = "thebutton" onclick = "process()" disabled = "true">Click here to get information</button>
 
 <code>
 <div id = "responseArea">

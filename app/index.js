@@ -26,7 +26,9 @@ exports.init = function(app) {
 exports.search = function(req, res) {
     var options = {
         method: 'GET',
-        url: 'https://api.yelp.com/v3/businesses/search?latitude=37.786882&longitude=-122.399972&limit=3&term=' + req.query.q,
+        url: 'https://api.yelp.com/v3/businesses/search?limit=3&term=' + req.query.term + 
+             '&latitude=' + req.query.latitude + 
+             '&longitude=' + req.query.longitude,
         headers:  {
              authorization: 'Bearer ' + access_token
          }
