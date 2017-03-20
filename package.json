@@ -1,0 +1,20 @@
+{
+  "name": "yelp-web-app",
+  "version": "1.0.0",
+  "description": "stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "yelp",
+    "fusion-api",
+    "other-stuff"
+  ],
+  "author": "Winston \"The biggest loser ever\" Chu",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
+}
