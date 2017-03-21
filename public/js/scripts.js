@@ -8,6 +8,7 @@ function generate_bullets(argument) {
 }
 
 function call_api(url) {
+    console.log(url)
     fetch(url)
         .then(res => res.json())
         .then(data => data.businesses)
@@ -40,8 +41,6 @@ var x = {}
 function showPosition(position) {
     x.latitude = position.coords.latitude
     x.longitude = position.coords.longitude
-    thebutton1.disabled = false
-    thebutton2.disabled = false
 }
 function getLocation() {
     if (navigator.geolocation) {
@@ -52,3 +51,9 @@ function getLocation() {
 }
 
 getLocation()
+
+// Materialize JavaScript Functions
+
+$(document).ready(function(){
+    $('.parallax').parallax();
+});

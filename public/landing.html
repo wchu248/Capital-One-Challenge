@@ -1,39 +1,56 @@
-<script type="text/javascript" src="js/scripts.js"></script>
+<!DOCTYPE html>
+<html lang="eng">
 
-<p>Look at all this cool info:</p>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <title>Recommend Me! - Home</title>
 
-<input id = "query" placeholder="Search..."></input>
-<button id="thebutton1" onclick = "process()" disabled=true>Click here to get information</button>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <!-- Link for Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
-<p>Fill out this questionnaire to get a recommendation!!!!!!!</p>
+        <!-- Own JavaScript code -->
+        <script type="text/javascript" src="js/scripts.js" ></script>
 
-<p>What type of food do you like?</p>
-<input id="food_question" placeholder="Chinese, Mexican, etc..."></input>
+    </head>
 
-<p>How far are you willing to travel for food (in miles, up to 25)?</p>
-<input type="number" id="radius"></input>
+    <body>
 
-<p>How much do you want to pay for food (check all that apply)?</p>
-<input type="checkbox" id="price1" value="1">$<br>
-<input type="checkbox" id="price2" value="2">$$<br> 
-<input type="checkbox" id="price3" value="3">$$$<br>
-<input type="checkbox" id="price4" value="4">$$$$
+        <div id="index-banner" class="parallax-container">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <br><br>
+                    <h1 class="header center red-text text-accent-4">Recommend Me!</h1>
+                    <div class="row center">
+                        <h5 class="header col s12 light">A web application to find the best restaurant near you</h5>
+                    </div>
+                    <!-- Search and Questionnaire Buttons -->
+                    <div class="input-field">
+                        <input id="query" placeholder="Search..."></input>
+                        <a class="waves-effect waves-light btn" href="search_results.html" onclick="process()"><i class="material-icons left">search</i>Search</a>
+                    </div>
 
-<p>Does your restaurant have to be open now?</p>
-<input type="radio" name="open_now" id="open1" value="yes">Yes<br>
-<input type="radio" name="open_now" id="open2" value="no">No<br>
+                    <!-- <input id = "query" placeholder="Search..."></input>
+                    <button id="thebutton1" onclick = "process()" disabled=true>Click here to get information</button> -->
 
-<button id="thebutton2" onclick="questionnaire()" disabled=true>Submit</button><br>
-
-<ul id = "responseArea">
-</ul>
-
-
-
-
-
+                    <div class="row center">
+                        <a class="waves-effect waves-light btn" href="questionnaire.html"><i class="material-icons left">help</i>Fill out a Questionnaire</a>
+                    </div>
+                    <br><br>
+                </div>
+            </div>
+            <div class="parallax"><img src="background.jpg" alt="Unsplashed background img 1"></div>
+        </div>
 
 
+
+    </body>
+
+</html>
 
 
 
