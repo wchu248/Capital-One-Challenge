@@ -1,8 +1,9 @@
 #home {
-  background-image: url("/images/banner1.jpg");
+  background-image: url("/images/banner2.jpg");
   background-size: cover;
 }
 
-h5 {
+.teal-text {
+  /* taken from StackOverflow: http://stackoverflow.com/questions/2570972/css-font-border */
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
