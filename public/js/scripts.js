@@ -38,6 +38,7 @@ function questionnaire() {
 }
 
 var x = {}
+
 function showPosition(position) {
     x.latitude = position.coords.latitude
     x.longitude = position.coords.longitude
@@ -51,13 +52,3 @@ function getLocation() {
 }
 
 getLocation()
-
-// Materialize JavaScript Functions
-
-$(document).ready(function(){
-    $('.parallax').parallax();
-});
-
-$(document).ready(function(){
-    $('.slider').slider();
-});
