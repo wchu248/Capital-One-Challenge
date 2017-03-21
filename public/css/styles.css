@@ -6,3 +6,13 @@
 .icon {
   line-height: 160%;
 }
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #d50000;
+  box-shadow: 0 1px 0 0 #d50000;
+}
+
+.icon-color {
+  color: #d32323;
+}
