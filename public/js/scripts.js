@@ -52,3 +52,7 @@ function getLocation() {
 }
 
 getLocation()
+
+$(document).ready(function(){
+  $('.parallax').parallax();
+});
