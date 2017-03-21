@@ -9,7 +9,7 @@ tokenizer.init(app)
 app.get("/api/search", tokenizer.search)
 
 app.get("*", (req, res) => {
-    res.sendfile("public/landing.html")
+    res.sendfile("public/views/landing.html")
 })
 
 PORT = 8080
