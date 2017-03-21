@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-        <title>Recommend Me! - Home</title>
+        <title>Recommend Me - Home</title>
 
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
@@ -14,39 +14,76 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
         <!-- Own JavaScript code -->
+        <link rel="stylesheet" media="all" type="text/css" href="css/styles.css" />
         <script type="text/javascript" src="js/scripts.js" ></script>
 
     </head>
 
     <body>
 
-        <div id="index-banner" class="parallax-container">
-            <div class="section no-pad-bot">
-                <div class="container">
-                    <br><br>
-                    <h1 class="header center red-text text-accent-4">Recommend Me!</h1>
-                    <div class="row center">
-                        <h5 class="header col s12 light">A web application to find the best restaurant near you</h5>
+        <div id="home">
+            <div id="index-banner" class="parallax-container">
+                <div class="section no-pad-bot">
+                    <div class="container">
+                        <br><br>
+                        <h1 class="header center red-text text-accent-4">Recommend Me</h1>
+                        <div class="row center">
+                            <h5 class="header col s12 light white-text">A web application to find the best restaurant near you!</h5>
+                            <h5 class="header col s12 light white-text">Search by keyword or fill out a questionnaire to get a recommendation.</h5>
+                        </div>
+                        <!-- Search and Questionnaire Buttons -->
+                        <div class="row">
+                            <div class="input-field col s6 offset-s3">
+                                <input id="query" placeholder="What kind of food would you like to eat?"></input>
+                                <div class="center">
+                                    <a class="waves-effect waves-light btn center" href="search_results.html" onclick="process()"><i class="material-icons left">search</i>Search</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <a class="waves-effect waves-light btn" href="questionnaire.html"><i class="material-icons left">help</i>Fill out a Questionnaire</a>
+                        </div>
+                        <br><br>
                     </div>
-                    <!-- Search and Questionnaire Buttons -->
-                    <div class="input-field">
-                        <input id="query" placeholder="Search..."></input>
-                        <a class="waves-effect waves-light btn" href="search_results.html" onclick="process()"><i class="material-icons left">search</i>Search</a>
-                    </div>
-
-                    <!-- <input id = "query" placeholder="Search..."></input>
-                    <button id="thebutton1" onclick = "process()" disabled=true>Click here to get information</button> -->
-
-                    <div class="row center">
-                        <a class="waves-effect waves-light btn" href="questionnaire.html"><i class="material-icons left">help</i>Fill out a Questionnaire</a>
-                    </div>
-                    <br><br>
                 </div>
             </div>
-            <div class="parallax"><img src="background.jpg" alt="Unsplashed background img 1"></div>
         </div>
 
+        <div class="container">
+            <div class="section">
 
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                    <h5 class="center">Speeds up development</h5>
+
+                    <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                </div>
+                </div>
+
+                <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                    <h5 class="center">User Experience Focused</h5>
+
+                    <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                </div>
+                </div>
+
+                <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+                    <h5 class="center">Easy to work with</h5>
+
+                    <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
 
     </body>
 
