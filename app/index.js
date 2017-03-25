@@ -41,3 +41,22 @@ exports.search = function(req, res) {
     })
 
 }
+
+exports.makeRecommendation = (req, res) => {
+    console.log(req.body)
+
+    var options = {
+        method: 'GET',
+        url: 'https://api.yelp.com/v3/businesses/search?term=' + req.body.food + 
+             '&latitude=' + req.query.latitude + 
+             '&longitude=' + req.query.longitude + 
+             '&radius=' + req.body.radius + 
+             '&price=' + req.body.price + 
+             '&open_now=' + req.body.group,
+        headers:  {
+             authorization: 'Bearer ' + access_token
+         }
+     }
+
+    res.render("search_results", {restaurants: req.body})
+}

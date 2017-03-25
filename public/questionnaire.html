@@ -32,12 +32,12 @@
       </div>
     </div>
     
-    <form action="submit">
+    <form method = "post" action = "/result">
       <div class="row">
         <div class="col s12">
           What type of food do you like?
           <div class="input-field inline">
-            <input id="food_question" type="text" placeholder="Chinese, Mexican, etc...">
+            <input id="food_question" type="text" placeholder="Chinese, Mexican, etc..." name = "food">
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
         <div class="col s12">
           How far are you willing to travel for food (in miles)?
           <div class="input-field inline">
-            <input id="radius" type="number" placeholder="1-25">
+            <input id="radius" type="number" placeholder="1-25" name = "radius">
           </div>
         </div>
       </div>
@@ -53,19 +53,19 @@
         <div class="col s12">
             How much do you want to pay for food? (check all that apply)
             <p>
-              <input type="checkbox" class="filled-in" id="price1" value="1"/>
+              <input type="checkbox" class="filled-in" id="price1" value="1" name = "price"/>
               <label for="price1">$</label>
             </p>
             <p>
-              <input type="checkbox" class="filled-in" id="price2" value="2"/>
+              <input type="checkbox" class="filled-in" id="price2" value="2" name = "price"/>
               <label for="price2">$$</label>            
             </p>
             <p>
-              <input type="checkbox" class="filled-in" id="price3" value="3"/>
+              <input type="checkbox" class="filled-in" id="price3" value="3" name = "price"/>
               <label for="price3">$$$</label>            
             </p>
             <p>
-              <input type="checkbox" class="filled-in" id="price4" value="4"/>
+              <input type="checkbox" class="filled-in" id="price4" value="4" name = "price"/>
               <label for="price4">$$$$</label>            
             </p>
         </div>
@@ -85,7 +85,7 @@
       </div>
       <div class="row">
         <div class="col s12">
-          <a onclick="questionnaire()" class="waves-effect waves-light btn" ><i class="material-icons left">search</i>Search</a>
+          <a onclick="questionnaire()" class="waves-effect waves-light btn"><i class="material-icons left">search</i>Search</a>
         </div>
       </div>
 

@@ -1,9 +1,20 @@
 function generate_bullets(argument) {
     responseArea.innerHTML = "Here are some restaurant recommendations for you!"
     for (var i = 0; i < argument.length; i++) {
-        list = document.createElement("li")
-        list.innerHTML = argument[i]
+        list = document.createElement("ul")
+        phone = document.createElement("li")
+        address = document.createElement("li")
+        var parsedData = JSON.parse(JSON.stringify(argument[i]))
+        console.log(parsedData)
+        list.innerHTML = parsedData[Object.keys(parsedData)[0]]
+        phone.innerHTML = "Phone: " + parsedData[Object.keys(parsedData)[1]]
+        address.innerHTML = "Address: " + parsedData[Object.keys(parsedData)[2]] + 
+                            ", " + parsedData[Object.keys(parsedData)[3]] + 
+                            ", " + parsedData[Object.keys(parsedData)[4]] + 
+                            " " + parsedData[Object.keys(parsedData)[5]]
         responseArea.appendChild(list)
+        responseArea.appendChild(phone)
+        responseArea.appendChild(address)
     }
 }
 
@@ -12,7 +23,16 @@ function call_api(url) {
     fetch(url)
         .then(res => res.json())
         .then(data => data.businesses)
-        .then(businesses => businesses.map(business => business.name))
+        .then(businesses => businesses.map(business => {
+            return {
+                name: business.name,
+                phone: business.phone,
+                address1: business.location.address1,
+                city: business.location.city,
+                state: business.location.state,
+                zip_code: business.location.zip_code
+            }
+        }))
         .then(data => {
             generate_bullets(data)
         })

@@ -1,22 +1,28 @@
 var express = require("express")
+var bodyParser = require('body-parser');
 var app = express()
 
+// logging module
 app.use(require("morgan")("dev"))
+
+// view engine and static file
+app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
-app.set('view engine', 'ejs')
+// body parser
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 const tokenizer = require("./app/index.js")
 tokenizer.init(app)
 app.get("/api/search", tokenizer.search)
+app.post("/result", tokenizer.makeRecommendation)
 
 app.get("/", (req, res) => {
     res.sendfile("public/views/landing.html")
 })
 
-app.get("/results", (req, res) => {
-    res.render("search_results", {winston: "nagger"})
-})
 
 PORT = 8080
 

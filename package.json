@@ -15,6 +15,7 @@
   "author": "Winston \"The biggest loser ever\" Chu",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "morgan": "^1.8.1",
