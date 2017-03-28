@@ -20,7 +20,7 @@ app.get("/api/search", tokenizer.search)
 app.post("/result", tokenizer.makeRecommendation)
 
 app.get("/", (req, res) => {
-    res.sendfile("public/views/landing.html")
+    res.sendfile("public/landing.html")
 })
 
 

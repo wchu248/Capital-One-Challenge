@@ -13,6 +13,12 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
+    <!-- Google Charts Maps JavaScipt file -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0ncscYA2L5VHYovyVMd12fdX0WBf_kW0&callback=initMap" type="text/javascript"></script>
+
     <!-- Own JavaScript code -->
     <script type="text/javascript" src="js/scripts.js" ></script>
 
@@ -89,9 +95,10 @@
         </div>
       </div>
 
-      <div id="responseArea"></div>
-
     </form>
+
+    <div id="responseArea"></div>
+    <div id="map_div" style="width: 400px; height: 300px"></div>
 
   </body>
 

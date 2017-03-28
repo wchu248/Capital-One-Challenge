@@ -18,12 +18,15 @@ function generate_bullets(argument) {
     }
 }
 
+var map_array = [['Lat', 'Long', 'Name']]
+
 function call_api(url) {
     console.log(url)
     fetch(url)
         .then(res => res.json())
         .then(data => data.businesses)
         .then(businesses => businesses.map(business => {
+            map_array.push([parseFloat(business.coordinates.latitude), parseFloat(business.coordinates.longitude), business.name])
             return {
                 name: business.name,
                 phone: business.phone,
@@ -36,6 +39,28 @@ function call_api(url) {
         .then(data => {
             generate_bullets(data)
         })
+}
+
+// Google Maps JavaScript Load
+
+google.charts.load("current", {packages:["map"]});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['Lat', 'Long', 'Name'],
+      [37.4232, -122.0853, 'Work'],
+      [37.4289, -122.1697, 'University'],
+      [37.6153, -122.3900, 'Airport'],
+      [37.4422, -122.1731, 'Shopping']
+    ]);
+
+    var map = new google.visualization.Map(document.getElementById('map_div'));
+    map.draw(data, {
+      showTooltip: true,
+      showInfoWindow: true
+    });
 }
 
 function process() {
@@ -56,6 +81,8 @@ function questionnaire() {
     call_api("/api/search?" + "latitude=" + x.latitude + "&longitude=" + x.longitude + "&term=" + food_question.value +
                            "&radius=" + r + "&price=" + price.join() + "&open_now=" + open_status)
 }
+
+// HTML5 GeoLocation
 
 var x = {}
 
