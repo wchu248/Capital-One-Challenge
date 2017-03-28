@@ -18,10 +18,10 @@ function generate_bullets(argument) {
     }
 }
 
-var map_array = [['Lat', 'Long', 'Name']]
+var map_array;
 
 function call_api(url) {
-    console.log(url)
+    map_array = [['Lat', 'Long', 'Name']]
     fetch(url)
         .then(res => res.json())
         .then(data => data.businesses)
@@ -38,23 +38,17 @@ function call_api(url) {
         }))
         .then(data => {
             generate_bullets(data)
+            google.charts.setOnLoadCallback(drawChart)
         })
 }
 
 // Google Maps JavaScript Load
 
 google.charts.load("current", {packages:["map"]});
-google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
 
-    var data = google.visualization.arrayToDataTable([
-      ['Lat', 'Long', 'Name'],
-      [37.4232, -122.0853, 'Work'],
-      [37.4289, -122.1697, 'University'],
-      [37.6153, -122.3900, 'Airport'],
-      [37.4422, -122.1731, 'Shopping']
-    ]);
+    var data = google.visualization.arrayToDataTable(map_array);
 
     var map = new google.visualization.Map(document.getElementById('map_div'));
     map.draw(data, {
