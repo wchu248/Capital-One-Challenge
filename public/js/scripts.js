@@ -38,13 +38,12 @@ function call_api(url) {
         }))
         .then(data => {
             generate_bullets(data)
+            google.charts.load("current", {packages:["map"]});
             google.charts.setOnLoadCallback(drawChart)
         })
 }
 
 // Google Maps JavaScript Load
-
-google.charts.load("current", {packages:["map"]});
 
 function drawChart() {
 
