@@ -1,5 +1,5 @@
 {
-  "name": "yelp-web-app",
+  "name": "capital-one-challenge",
   "version": "1.0.0",
   "main": "app.js",
   "description": "stuff",
@@ -12,11 +12,10 @@
     "fusion-api",
     "other-stuff"
   ],
-  "author": "Winston \"The biggest loser ever\" Chu",
+  "author": "Winston Chu",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "ejs": "^2.5.6",
     "express": "^4.15.2",
     "morgan": "^1.8.1",
     "request": "^2.81.0"
