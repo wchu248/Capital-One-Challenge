@@ -5,7 +5,7 @@
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-        <title>Recommend Me - Home</title>
+        <title>Capital One Challenge</title>
 
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -34,7 +34,7 @@
             <div class="section no-pad-bot">
                 <div class="container">
                     <br><br>
-                    <h1 class="header center red-text text-accent-4">Recommend Me</h1>
+                    <h1 class="header center red-text text-accent-4">Capital One Challenge</h1>
                     <div class="row center">
                         <h5 class="header col s12 light white-text">A web application to find the best restaurant near you!</h5>
                         <h5 class="header col s12 light white-text">Fill out a questionnaire to get a recommendation.</h5>
@@ -76,7 +76,7 @@
                     <h2 class="center brown-text"><i class="material-icons small icon-color">location_on</i></h2>
                     <h5 class="center">Location Based</h5>
 
-                    <p class="icon light">Your location is obtained via HTML5 Geolocation and used as your default location to search for restaurants near you. All you have to do is set a certain radius, in miles, of how far you're willing to travel for food and we'll find you a restaurant!</p>
+                    <p class="icon light">Your location is obtained via HTML5 Geolocation and used as your default location to search for restaurants near you. All you have to do is set a certain radius (in miles) of how far you're willing to travel for food and we'll find you a restaurant!</p>
                 </div>
                 </div>
             </div>
@@ -86,9 +86,7 @@
         <div class="parallax-container valign-wrapper">
             <div name="questionnaire" id="questionnaire" class="row">
                 <form method = "post" action = "/result">
-                    <div class="row center">
-                        <h5>Fill out this simple questionnaire to get restaurant recommendations!</h5>
-                    </div>
+                <br>
                   <div class="row">
                     <div class="col s12">
                       What type of food do you like?
@@ -138,22 +136,24 @@
                           <label for="open2">No</label>
                         </p>
                     </div>
-                  </div>               
+                  </div>                      
              </form>
             </div>
             <div class="parallax"><img src="images/banner1.jpg" alt="Unsplashed background img 2"></div>
         </div>
 
         <div class="container">
-            <ul onclick="questionnaire()" class="collapsible col s12" data-collapsible="accordion">
+            <ul class="collapsible col s12 m4 l8" data-collapsible="accordion">
               <li>
-                <div class="collapsible-header">
+                <div class="collapsible-header" onclick="questionnaire()">
                     <span></span>
-                    <i class="material-icons">search</i>Click here to see your results!
+                    <i class="material-icons">search</i>Click here to see your recommendations!
                 </div>
                 <div class="collapsible-body">
-                    <div id="responseArea"></div>
-                    <div id="map_div" style="width: 800px; height: 700px;"></div>
+                    <div class="row">
+                        <div id="responseArea" class="col s6"></div>
+                        <div id="map_div" style="width: 450; height: 650px; position: right" class="col s6"></div>
+                    </div>
                 </div>
               </li>
             </ul>

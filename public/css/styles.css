@@ -25,7 +25,7 @@
 form {
     background-color: white;
     opacity: 0.75;
-    padding-bottom: 50px;
+    padding: 40px;
 }
 
 .checkbox-red[type="checkbox"].filled-in:checked + label:after{
