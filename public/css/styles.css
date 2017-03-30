@@ -37,3 +37,15 @@ form {
     border: 2px solid #d50000;
     background-color: #d50000;
 }
+
+.start {
+    height: 1000px;
+}
+
+.info {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h1 {
+    font-weight: bold;
+}
