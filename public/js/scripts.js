@@ -21,11 +21,12 @@ function generate_bullets(argument) {
 var map_array;
 
 function call_api(url) {
-    map_array = [['Lat', 'Long', 'Name']]
+    map_array = [['Lat', 'Long', 'Name'], [x.latitude, x.longitude, 'You are here']]
     fetch(url)
         .then(res => res.json())
         .then(data => data.businesses)
         .then(businesses => businesses.map(business => {
+
             map_array.push([parseFloat(business.coordinates.latitude), parseFloat(business.coordinates.longitude), business.name])
             return {
                 name: business.name,
@@ -56,10 +57,6 @@ function drawChart() {
     });
 }
 
-function process() {
-    call_api("/api/search?" + "latitude=" + x.latitude + "&longitude=" + x.longitude + "&term=" + query.value)
-}
-
 function questionnaire() {
     const r = (parseInt(radius.value) * 1609.344).toString()
     const price = []
@@ -72,7 +69,7 @@ function questionnaire() {
         open_status = false;
     }
     call_api("/api/search?" + "latitude=" + x.latitude + "&longitude=" + x.longitude + "&term=" + food_question.value +
-                           "&radius=" + r + "&price=" + price.join() + "&open_now=" + open_status)
+                           "&radius=" + r + "&limit=10" + "&price=" + price.join() + "&open_now=" + open_status)
 }
 
 // HTML5 GeoLocation
@@ -102,4 +99,21 @@ $(document).ready(function(){
 $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
+});
+
+// Smooth scrolling when page jumps
+
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
 });

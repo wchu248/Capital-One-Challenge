@@ -7,12 +7,33 @@
   line-height: 160%;
 }
 
-/* label underline focus color */
-.input-field input[type=text]:focus {
-  border-bottom: 1px solid #d50000;
-  box-shadow: 0 1px 0 0 #d50000;
-}
-
 .icon-color {
   color: #d32323;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+   border-bottom: 1px solid #d50000;
+   box-shadow: 0 1px 0 0 #d50000;
+}
+
+.input-field input[type=number]:focus {
+   border-bottom: 1px solid #d50000;
+   box-shadow: 0 1px 0 0 #d50000;
+}
+
+form {
+    background-color: white;
+    opacity: 0.75;
+    padding-bottom: 50px;
+}
+
+.checkbox-red[type="checkbox"].filled-in:checked + label:after{
+     border: 2px solid #d50000;
+     background-color: #d50000;
+}
+
+.radio-red[type="radio"]:checked + label:after {
+    border: 2px solid #d50000;
+    background-color: #d50000;
 }
