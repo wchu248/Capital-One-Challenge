@@ -1,4 +1,5 @@
 function generate_bullets(argument) {
+    responseArea.innerHTML = ""
     for (var i = 0; i < argument.length; i++) {
         names = document.createElement("b")
         phone = document.createElement("li")
