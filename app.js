@@ -17,14 +17,15 @@ app.use(bodyParser.urlencoded({ extended: true }))
 const tokenizer = require("./app/index.js")
 tokenizer.init(app)
 app.get("/api/search", tokenizer.search)
-app.post("/result", tokenizer.makeRecommendation)
 
 app.get("/", (req, res) => {
     res.sendfile("public/landing.html")
 })
 
+const port = process.env.PORT || 8080
+app.set('port', port);
+var http = require('http').Server(app)
 
-PORT = 8080
-
-app.listen(PORT)
-console.log("App running at localhost:" + PORT)
+http.listen(port, () => {
+  console.log("Server started on port " + port)
+})
