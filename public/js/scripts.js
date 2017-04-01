@@ -4,8 +4,7 @@ function generate_bullets(argument) {
         names = document.createElement("b")
         phone = document.createElement("li")
         address = document.createElement("li")
-        var parsedData = JSON.parse(JSON.stringify(argument[i]))
-        console.log(parsedData)
+        var parsedData = JSON.parse(JSON.stringify(argument[i]))        
         names.innerHTML = parsedData[Object.keys(parsedData)[0]]
         phone.innerHTML = "Phone: " + parsedData[Object.keys(parsedData)[1]]
         address.innerHTML = "Address: " + parsedData[Object.keys(parsedData)[2]] + 
