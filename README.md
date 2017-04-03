@@ -8,4 +8,4 @@ This project is built on the <a href="https://nodejs.org/en/">Node.js</a> framew
 
 This project is currently live on Heroku at: https://capital-one-challenge.herokuapp.com/
 
-Github Repo: https://github.com/wchu248/Capital-One-Challenge/
+You can contact me with any questions, comments, or concerns at: wpchu@andrew.cmu.edu
